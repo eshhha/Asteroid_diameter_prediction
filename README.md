@@ -81,3 +81,25 @@ Depending on the dataset version, features may include:
 
 
 
+# Asteroid Diameter Explorer
+
+A responsive Vite + TypeScript web app based on the supplied `Asteroid_diameter_prediction.ipynb` workflow.
+
+The current client-side baseline uses the standard absolute-magnitude/albedo relation to estimate diameter:
+
+`D = 1329 / sqrt(albedo) * 10^(-H/5)`
+
+The UI already collects the notebook's key inputs and orbital context. To use the trained neural network later, replace `calculateDiameter` in `src/main.ts` with a request to a backend that loads the saved Keras model and scaler.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+For a production check:
+
+```bash
+npm run build
+```
